@@ -20,7 +20,7 @@ export default class FilmsPresenter {
     render(this.filmsListContainerComponent, this.filmsListComponent.getElement());
 
     for (let i = 0; i < this.filmsCards.length; i++) {
-      render(new FilmCardView(this.filmsCards), this.filmsListContainerComponent.getElement());
+      render(new FilmCardView(this.filmsCards[i]), this.filmsListContainerComponent.getElement());
     }
 
     render(new LoadMoreButtonView(), this.filmsListComponent.getElement());

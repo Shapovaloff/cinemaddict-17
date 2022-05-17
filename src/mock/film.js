@@ -11,14 +11,33 @@ const generateTitle = () => {
     'The Man with the Golden Arm'
   ];
 
-  const randomIndex = getRandomInteger(0, titles.length);
+  const randomIndex = getRandomInteger(0, titles.length - 1);
 
   return titles[randomIndex];
 };
 
+const generateGenre = () => {
+  const genres = [
+    'Drama',
+    'Comedy',
+    'Thriller',
+    'Action movie',
+    'Horror movie',
+    'Fantasy',
+    'Sci-fi'
+  ];
+
+  const randomIndex = getRandomInteger(0, genres.length - 1);
+
+  return genres[randomIndex];
+};
+
+const generateRating = () => `${getRandomInteger(4, 9)}.${getRandomInteger(0, 9)}`;
+const generateYear = () => getRandomInteger(1950, 2020);
+
 export const generateFilm = () => ({
   title: generateTitle(),
-  rating: '0.0',
-  year: '1929',
-  genre: 'Musical',
+  rating: generateRating(),
+  year: generateYear(),
+  genre: generateGenre(),
 });
