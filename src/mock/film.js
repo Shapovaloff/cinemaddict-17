@@ -40,4 +40,7 @@ export const generateFilm = () => ({
   rating: generateRating(),
   year: generateYear(),
   genre: generateGenre(),
+  isWatchList: Boolean(getRandomInteger(0, 1)),
+  isWatched: Boolean(getRandomInteger(0, 1)),
+  isFavorite: Boolean(getRandomInteger(0, 1)),
 });
