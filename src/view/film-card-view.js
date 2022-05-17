@@ -1,9 +1,17 @@
 import {createElement} from '../render';
 
 const createFilmCardTemplate = (film) => {
-  const {title, rating, year, genre, isAddToWatchList} = film;
+  const {title, rating, year, genre, isAddToWatchList, isWatched, isFavorite} = film;
 
   const addToWatchListClassName = isAddToWatchList
+    ? 'film-card__controls-item--active'
+    : '';
+
+  const watchedClassName = isWatched
+    ? 'film-card__controls-item--active'
+    : '';
+
+  const favoriteClassName = isFavorite
     ? 'film-card__controls-item--active'
     : '';
 
@@ -23,8 +31,8 @@ const createFilmCardTemplate = (film) => {
       </a>
       <div class="film-card__controls">
         <button class="film-card__controls-item film-card__controls-item--add-to-watchlist ${addToWatchListClassName}" type="button">Add to watchlist</button>
-        <button class="film-card__controls-item film-card__controls-item--mark-as-watched" type="button">Mark as watched</button>
-        <button class="film-card__controls-item film-card__controls-item--favorite" type="button">Mark as favorite</button>
+        <button class="film-card__controls-item film-card__controls-item--mark-as-watched ${watchedClassName}" type="button">Mark as watched</button>
+        <button class="film-card__controls-item film-card__controls-item--favorite ${favoriteClassName}" type="button">Mark as favorite</button>
       </div>
     </article>`
   );
