@@ -4,6 +4,7 @@ import FilmsView from '../view/films-view';
 import FilmsListContainerView from '../view/films-list-container-view';
 import FilmCardView from './../view/film-card-view';
 import LoadMoreButtonView from '../view/load-more-button-view';
+import FilmDetailsView from '../view/film-details-view';
 
 export default class FilmsPresenter {
   filmsComponent = new FilmsView();
@@ -24,5 +25,6 @@ export default class FilmsPresenter {
     }
 
     render(new LoadMoreButtonView(), this.filmsListComponent.getElement());
+    render(new FilmDetailsView(this.filmsCards[0]),this.filmsContainer);
   };
 }
